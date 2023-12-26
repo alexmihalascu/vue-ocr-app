@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="upload-card">
       <input type="file" @change="onFileChange" />
       <button v-if="imageSrc" @click="recognizeText">Extract Text</button>
-      <img v-if="imageSrc" :src="imageSrc" alt="Uploaded Image" style="max-width: 100%; height: auto;"/>
+      <img v-if="imageSrc" :src="imageSrc" alt="Uploaded Image" class="uploaded-image"/>
     </div>
   </template>
   
@@ -44,6 +44,37 @@
   </script>
   
   <style>
-  /* Add your component styling here if necessary */
+  .upload-card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px;
+  }
+  
+  input[type="file"] {
+    margin: 15px 0;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .uploaded-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
   </style>
   
